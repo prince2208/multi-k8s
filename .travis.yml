@@ -10,11 +10,11 @@ before_install:
   - curl https://sdk.cloud.google.com | bash > /dev/null;
   - source $HOME/google-cloud-sdk/path.bash.inc
   - gcloud components update kubectl
-  - gcloud auth activate-service-account --key-file multi-k8s-276915-576b5d1114bb.json
+  - gcloud auth activate-service-account --key-file multi-k8s-276915-0f6dace0ea9d.json
   - gcloud config set project multi-k8s-276915
   - gcloud config set compute/zone us-central1-c
   - gcloud container clusters get-credentials multi-cluster
-  - echo "DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker build -t prince2208/react-test -f ./client/Dockerfile.dev ./client
 
 scripts:
