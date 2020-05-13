@@ -8,6 +8,6 @@ docker push  prince2208/multi-client:$SHA
 docker push  prince2208/multi-server:$SHA
 docker push  prince2208/multi-worker:$SHA
 kubectl apply -f k8s
-kubectl set image deployments/server-deployment server=prince2208/multi-server:$SHA
-kubectl set image deployments/worker-deployment server=prince2208/multi-worker:$SHA
-kubectl set image deployments/client-deployment server=prince2208/multi-client:$SHA
+kubectl set image deployments/server-deployment server=stephengrider/multi-server:latest
+kubectl set image deployments/worker-deployment server=stephengrider/multi-worker:latest
+kubectl set image deployments/client-deployment server=stephengrider/multi-client:latest
